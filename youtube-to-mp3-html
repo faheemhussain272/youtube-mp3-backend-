@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube to MP3 Downloader - Toolesmart</title>
+  <meta name="description" content="Easily convert YouTube videos to high-quality MP3 with our fast and free downloader. No signup needed!" />
+  <meta name="keywords" content="YouTube to MP3, MP3 Downloader, YouTube Audio Download, Toolesmart" />
+  <meta property="og:title" content="Free YouTube to MP3 Downloader - Toolesmart" />
+  <meta property="og:description" content="Convert and download YouTube videos to MP3 easily and for free. Instant and clean tool!" />
+  <meta property="og:image" content="https://toolesmart.com/assets/mp3-thumbnail.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://toolesmart.com/youtube-to-mp3.html" />
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: #ff3c3c;
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 12px;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #ff3c3c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ffc107;
+      color: #000;
+    }
+
+    .how-to-use {
+      max-width: 700px;
+      margin-top: 40px;
+      text-align: left;
+      line-height: 1.6;
+      font-size: 15px;
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #ff3c3c;
+    }
+
+    .how-to-use h2 {
+      color: #ffc107;
+      margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+      input, button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>YouTube to MP3 Converter</h1>
+  <p>Convert any YouTube video into high-quality MP3 instantly.</p>
+
+  <input id="yt" type="text" placeholder="Paste your YouTube video URL here..." />
+  <button onclick="convert()">Download MP3</button>
+
+  <div class="how-to-use">
+    <h2>How to Use</h2>
+    <ul>
+      <li>Copy the link of any YouTube video</li>
+      <li>Paste it in the input box above</li>
+      <li>Click the <strong>Download MP3</strong> button</li>
+      <li>Your download will start automatically</li>
+    </ul>
+    <p><strong>Note:</strong> Make sure the URL is valid and public.</p>
+  </div>
+
+  <script>
+    function convert() {
+      let url = document.getElementById("yt").value.trim();
+      if (!url) {
+        alert("Please enter a YouTube URL.");
+        return;
+      }
+      window.open(`https://YOUR-BACKEND-URL.up.railway.app/convert?url=${encodeURIComponent(url)}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
